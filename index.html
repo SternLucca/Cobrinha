@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="shortcut icon" href="snake.ico" type="image/x-icon">
+    <title>Cobrinha</title>
+</head>
+<body>
+    <button id="gear">  
+        <span class="material-symbols-outlined">
+            settings
+        </span>
+    </button>
+    <div class="score">Score: <span class="score--value">0</span></div>
+    <div class="menu-screen">
+        <span class="game-over">Game Over</span>
+        <span class="final-score">Score: <span id="scoreF">00</span></span>
+        <span class="hi-score">Hi-Score: <span id="high">0</span></span>
+        <button class="btn-play">
+            <span class="material-symbols-outlined">
+                replay
+            </span>
+            Jogar Novamente
+        </button>
+    </div>
+    <div class="configScreen">
+        <button id="close">
+            <span class="material-symbols-outlined">
+                close
+            </span>
+        </button>
+        <p>Snake Color:</p>
+        <div class="options1">
+            <button id="red">Red</button>
+            <button id="blue">Blue</button>
+        </div>
+        <div class="options2">
+            <button id="green">Green</button>
+            <button id="yellow">Yellow</button>
+        </div>
+        <div class="options3">
+            <button id="white">White</button>
+            <button id="pink">Pink</button>
+        </div>
+        <p id="speedText">Snake Speed:</p>
+        <div class="speeds">
+            <button class="speed-button" id="slow">Slow</button>
+            <button class="speed-button" id="mediumSpeed">Medium</button>
+            <button class="speed-button" id="fast">Fast</button>
+        </div>
+        <p id="boardText">Board Size:</p>
+        <div class="boardSizes">
+            <button class="board-button" id="smallBoard">Small</button>
+            <button class="board-button" id="mediumBoard">Medium</button>
+            <button class="board-button" id="largeBoard">Large</button>
+        </div>
+        <p id="toggle">Control Visibility:</p>
+        <div class="toggleButton">
+            <div class="circle"></div>
+        </div>
+    </div>
+    <canvas width="600px" height="600px"></canvas>
+    <div class="setas">
+        <span class="material-symbols-outlined seta-botao" id="cima">
+            arrow_upward
+        </span>
+        <span class="material-symbols-outlined seta-botao" id="esquerda">
+            arrow_back
+        </span>
+        <span class="material-symbols-outlined seta-botao" id="direita">
+            arrow_right_alt
+        </span>
+        <span class="material-symbols-outlined seta-botao" id="baixo">
+            south
+        </span>
+        <span id="bola">
+        </span>
+    </div>
+    <div class="sizes">
+        <button class="size-buton" id="small">Small</button>
+        <button class="size-buton" id="medium">Medium</button>
+        <button class="size-buton" id="large">Large</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

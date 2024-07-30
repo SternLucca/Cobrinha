@@ -1,0 +1,517 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppings", sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background-color: #19191976;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+canvas{
+    background-color: #111;
+    width: 400px;
+}
+.score{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.8rem;
+}
+.score--value{
+    font-weight: 700;
+    font-size: 4.5rem;
+    margin-top: -10px;
+}
+.menu-screen{
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+}
+.game-over{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 3rem;
+}
+.final-score{
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+.hi-score{
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+.btn-play{
+    width: 200px;
+    height: 35px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    padding: 10px, 19px, 10px, 10px;
+    font-weight: 600;
+    color: #333;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+}
+.sizes{
+    height: 40px;
+    margin-top: 5px;
+    width: 220px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.size-buton{
+    font-weight: 500;
+    margin-top: 5px;
+    height: 30px;
+    cursor: pointer;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    width: 60px;
+    color: white;
+}
+.size-buton:hover{
+    background-color: rgba(0, 0, 0, 0.6);
+    font-size: medium;
+    width: 70px;
+    height: 40px;
+    margin-top: 0;
+    transition: 250ms;
+}
+#gearSpace{
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 5px;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#gear{
+    position: absolute;
+    border: none;
+    left: 0;
+    top: 0;
+    margin: 5px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+#gear:hover{
+    width: 40px;
+    height: 40px;
+    transition: 250ms;
+}
+.configScreen{
+    position: absolute;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 400px;
+    height: 100vh;
+    display: none;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    color: black;
+    padding: 10px;
+}
+#close{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+    margin-right: 5px;
+    margin-top: -5px;
+    cursor: pointer;
+}
+#close:hover{
+    transition: 250ms;
+    width: 40px;
+    height: 40px;
+}
+.configScreen > p{
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-size: large;
+    font-weight: 700;
+}
+.options1 > button{
+    width: 150px;
+    height: 35px;
+    font-size: large;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    border-color: rgba(0, 128, 0, 0);
+}
+.options2 > button{
+    margin-top: 5px;
+    height: 35px;
+    width: 150px;
+    font-size: large;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    border-color: rgba(0, 128, 0, 0);
+}
+.options3 > button{
+    margin-top: 5px;
+    height: 35px;
+    width: 150px;
+    font-size: large;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    border-color: rgba(0, 128, 0, 0);
+}
+.options2 > button:hover{
+    width: 160px;
+    height: 45px;
+    transition: 250ms ease-in-out;
+}
+.options1 > button:hover{
+    width: 160px;
+    height: 45px;
+    transition: 250ms ease-in-out;
+}
+.options3 > button:hover{
+    width: 160px;
+    height: 45px;
+    transition: 250ms ease-in-out;
+}
+#red{
+    background-color: rgb(255, 75, 75);
+}
+#yellow{
+    background-color: yellow;
+}
+#blue{
+    background-color: lightblue;
+}
+#green{
+    background-color: greenyellow;
+}
+#white{
+    background-color: white;
+    border-color: green;
+}
+#pink{
+    background-color: rgb(255, 0, 255);
+}
+.speeds{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 245px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+#mediumSpeed{
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.speed-button{
+    width: 75px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 10px;
+    height: 30px;
+    font-weight: 500;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+}
+.speed-button:hover{
+    background-color: rgba(0, 0, 0, 0.3);
+    font-size: medium;
+    width: 85px;
+    height: 40px;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 5px;
+    margin-right: 5px;
+    transition: 250ms;
+}
+.boardSizes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 245px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.board-button{
+    width: 75px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 10px;
+    height: 30px;
+    font-weight: 500;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+}
+.board-button:hover{
+    background-color: rgba(0, 0, 0, 0.3);
+    font-size: medium;
+    width: 85px;
+    height: 40px;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 5px;
+    margin-right: 5px;
+    transition: 250ms;
+}
+#smallBoard{
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.setas{
+    position: absolute;
+    right: 20%;
+    bottom: 50%;
+    transform: translate(50%, 50%);
+    background-color: rgba(0, 255, 255, 0.3);
+    height: 230px;
+    width: 230px;
+    border-radius: 30px;
+}
+.setas > span{
+    background-color: rgb(0, 227, 227);
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+#cima{
+    margin-top: 5px;
+    margin-left: 80px;
+}
+#esquerda{
+    margin-top: 80px;
+    margin-left: 5px;
+}
+#direita{
+    margin-top: 80px;
+    margin-left: 155px;
+}
+#baixo{
+    margin-left: 80px;
+    margin-top: 155px;
+}
+#bola{
+    border-radius: 100%;
+    margin-top: 85px;
+    margin-left: 85px;
+    width: 60px;
+    height: 60px;
+}
+.seta-botao:hover{
+    background-color: rgb(0, 200, 200);
+    cursor: pointer;
+}
+.cimaA{
+    animation: botaoCima 250ms linear;
+}
+.esquerdaA{
+    animation: botaoEsquerda 250ms linear;
+}
+.direitaA{
+    animation: botaoDireita 250ms linear;
+}
+.baixoA{
+    animation: botaoBaixo 250ms linear;
+}
+@keyframes botaoCima{
+    0%{
+        width: 70px;
+        height: 70px;
+        margin-left: 80px;
+        margin-top: 5px;
+    }
+    50%{
+        width: 60px;
+        height: 60px;
+        margin-left: 85px;
+        margin-top: 10px;
+    }
+    100%{
+        width: 70px;
+        height: 70px;
+        margin-left: 80px;
+        margin-top: 5px;
+    }
+}
+@keyframes botaoEsquerda{
+    0%{
+        width: 70px;
+        height: 70px;
+        margin-left: 5px;
+        margin-top: 80px;
+    }
+    50%{
+        width: 60px;
+        height: 60px;
+        margin-left: 10px;
+        margin-top: 85px;
+    }
+    100%{
+        width: 70px;
+        height: 70px;
+        margin-left: 5px;
+        margin-top: 80px;
+    }
+}
+@keyframes botaoDireita{
+    0%{
+        width: 70px;
+        height: 70px;
+        margin-left: 155px;
+        margin-top: 80px;
+    }
+    50%{
+        width: 60px;
+        height: 60px;
+        margin-left: 160px;
+        margin-top: 85px;
+    }
+    100%{
+        width: 70px;
+        height: 70px;
+        margin-left: 155px;
+        margin-top: 80px;
+    }
+}
+@keyframes botaoBaixo{
+    0%{
+        width: 70px;
+        height: 70px;
+        margin-left: 80px;
+        margin-top: 155px;
+    }
+    50%{
+        width: 60px;
+        height: 60px;
+        margin-left: 85px;
+        margin-top: 160px;
+    }
+    100%{
+        width: 70px;
+        height: 70px;
+        margin-left: 80px;
+        margin-top: 155px;
+    }
+}
+.toggleButton{
+    width: 55px;
+    height: 26px;
+    background-color: lightgreen;
+    border-style: solid;
+    border-color: black;
+    border-radius: 100px;
+    cursor: pointer;
+}
+.circle{
+    width: 20px;
+    height: 20px;
+    background-color: green;
+    margin-top: 1px;
+    margin-left: 1px;
+    margin-bottom: 1px;
+    border-radius: 100%;
+}
+.toggleA1{
+    animation: togglefx 1s;
+    animation-fill-mode: forwards;
+}
+.colorA1{
+    animation: colorChanging 1s;
+    animation-fill-mode: forwards;
+}
+.toggleA2{
+    animation: togglefx2 1s;
+    animation-fill-mode: forwards;
+}
+.colorA2{
+    animation: colorChanging2 1s;
+    animation-fill-mode: forwards;
+}
+@keyframes togglefx{
+    from{
+        margin-left: 1px;
+        background-color: green;
+    }
+    to{
+        margin-left: 30px;
+        background-color: red;
+    }
+}
+@keyframes colorChanging{
+    from{
+        background-color: lightgreen;
+    }
+    to{
+        background-color: lightcoral;
+    }
+}
+@keyframes togglefx2{
+    from{
+        margin-left: 30px;
+        background-color: red;
+    }
+    to{
+        margin-left: 1px;
+        background-color: green;
+    }
+}
+@keyframes colorChanging2{
+    from{
+        background-color: lightcoral;
+    }
+    to{
+        background-color: lightgreen;
+    }
+}
